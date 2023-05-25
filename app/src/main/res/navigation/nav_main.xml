@@ -3,11 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/loginFragment">
-
+    app:startDestination="@id/home">
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.parcialtp3.fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:id="@+id/buscar"
+        android:name="com.example.parcialtp3.fragments.BuscarFragment"
+        android:label="fragment_buscar"
+        tools:layout="@layout/fragment_buscar" />
+    <fragment
+        android:id="@+id/autos"
+        android:name="com.example.parcialtp3.fragments.AutosFragment"
+        android:label="fragment_autos"
+        tools:layout="@layout/fragment_autos" />
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.example.parcialtp3.fragments.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.parcialtp3.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.parcialtp3.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

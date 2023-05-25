@@ -1,5 +1,6 @@
 package com.example.parcialtp3.fragments
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
@@ -8,8 +9,11 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.parcialtp3.MainActivity
 import com.example.parcialtp3.R
 
 
@@ -29,6 +33,16 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
 
         vista = inflater.inflate(R.layout.fragment_login, container, false)
+
+        //var btnIngresar =  vista.findViewById<TextView>(R.id.btnIngresar)
+
+        vista.findViewById<Button>(R.id.btnIngresar).setOnClickListener {
+            val action = LoginFragmentDirections.actionLoginFragmentToMainActivity()
+            this.findNavController().navigate(action)
+
+        }
+
+
         titulo_login = vista.findViewById<TextView>(R.id.tituloLogin)
         val spannableString = SpannableString(titulo_login.getText())
         val textLength = spannableString.length
