@@ -50,6 +50,7 @@ class LoginFragment : Fragment() {
 
     }
     private fun tituloSpannableString(titulo:TextView) {
+        //VERRRRR
         val texto = titulo.text.toString()
         val spannableString = SpannableString(texto)
 
