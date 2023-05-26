@@ -3,11 +3,17 @@
 
     <item
         android:id="@+id/perfil"
+        android:icon="@drawable/profile"
+
         android:title="@string/item_perfil" />
     <item
         android:id="@+id/settings"
+        android:icon="@drawable/filter"
+
         android:title="@string/item_configuracion" />
     <item
         android:id="@+id/favoritos"
+        android:icon="@drawable/notification"
+
         android:title="@string/item_favoritos" />
 </menu>

@@ -1,10 +1,26 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ParcialTP3" parent="Theme.Material3.Dark">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@color/grey</item>
+    <!-- Estilo base para la aplicación con barra de acción -->
+    <style name="Base.Theme.ParcialTP3" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Personaliza aquí tu tema con barra de acción -->
+        <item name="colorPrimary">@color/black</item>
+        <!-- Otros atributos y personalizaciones -->
     </style>
 
-    <style name="Theme.ParcialTP3" parent="Base.Theme.ParcialTP3" />
+    <!-- Estilo para la aplicación con barra de acción -->
+    <style name="Theme.ParcialTP3" parent="Base.Theme.ParcialTP3">
+        <!-- Personaliza aquí tu tema con barra de acción -->
+    </style>
+
+    <!-- Estilo base para la aplicación sin barra de acción -->
+    <style name="Base.Theme.ParcialTP3.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Personaliza aquí tu tema sin barra de acción -->
+        <item name="colorPrimary">@color/green</item>
+        <!-- Otros atributos y personalizaciones -->
+    </style>
+
+    <!-- Estilo para la aplicación sin barra de acción -->
+    <style name="Theme.ParcialTP3.NoActionBar" parent="Base.Theme.ParcialTP3.NoActionBar">
+        <!-- Personaliza aquí tu tema sin barra de acción -->
+    </style>
+
 </resources>
