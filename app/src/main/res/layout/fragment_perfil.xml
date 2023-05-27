@@ -44,9 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:src="@drawable/notificacionesPerfil"
-            app:srcCompat="@drawable/notificacionesPerfil" />
-
+            android:src="@drawable/notificacionesperfil"
+            app:srcCompat="@drawable/notificacionesperfil" />
         <TextView
             android:id="@+id/txtnotificaciones"
             android:layout_width="match_parent"
@@ -69,9 +68,8 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:src="@drawable/profileNotifications"
-                app:srcCompat="@drawable/profileNotifications" />
-
+                android:src="@drawable/profilenotifications"
+                app:srcCompat="@drawable/profilenotifications" />
             <TextView
                 android:id="@+id/txtNotificaciones2"
                 android:layout_width="wrap_content"

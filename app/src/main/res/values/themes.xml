@@ -14,7 +14,7 @@
     <!-- Estilo base para la aplicación sin barra de acción -->
     <style name="Base.Theme.ParcialTP3.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Personaliza aquí tu tema sin barra de acción -->
-        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimary">@color/grey</item>
         <!-- Otros atributos y personalizaciones -->
     </style>
 
