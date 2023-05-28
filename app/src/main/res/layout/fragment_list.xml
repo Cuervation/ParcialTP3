@@ -9,8 +9,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_cars"
-        android:layout_width="380dp"
-        android:layout_height="126dp"
+        android:layout_width="341dp"
+        android:layout_height="130dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
