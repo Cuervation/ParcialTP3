@@ -7,17 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.parcialtp3.R
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BuscarFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BuscarFragment : Fragment() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -27,6 +20,4 @@ class BuscarFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_buscar, container, false)
     }
-
-
 }

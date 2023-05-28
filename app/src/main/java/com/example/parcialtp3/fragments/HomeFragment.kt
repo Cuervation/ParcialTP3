@@ -7,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.parcialtp3.R
 
-
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -23,5 +20,4 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
-
 }
