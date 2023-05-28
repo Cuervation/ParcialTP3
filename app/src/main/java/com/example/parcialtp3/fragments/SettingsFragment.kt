@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.parcialtp3.R
 
-
 class SettingsFragment : Fragment() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +21,4 @@ class SettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
-
-
 }

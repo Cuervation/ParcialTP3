@@ -13,12 +13,20 @@
         android:id="@+id/autos"
         android:name="com.example.parcialtp3.fragments.AutosFragment"
         android:label="fragment_autos"
-        tools:layout="@layout/fragment_autos" />
+        tools:layout="@layout/fragment_autos" >
+        <action
+            android:id="@+id/action_autos_to_home"
+            app:destination="@id/home" />
+    </fragment>
     <fragment
         android:id="@+id/perfil"
         android:name="com.example.parcialtp3.fragments.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfil_to_home"
+            app:destination="@id/home" />
+    </fragment>
     <fragment
         android:id="@+id/home"
         android:name="com.example.parcialtp3.fragments.HomeFragment"
@@ -28,5 +36,9 @@
         android:id="@+id/settings"
         android:name="com.example.parcialtp3.fragments.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
 </navigation>
