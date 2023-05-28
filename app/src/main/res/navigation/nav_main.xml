@@ -36,7 +36,12 @@
         android:id="@+id/settings"
         android:name="com.example.parcialtp3.fragments.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" >
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.parcialtp3.fragments.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
         <action
             android:id="@+id/action_settings_to_perfil"
             app:destination="@id/perfil" />

@@ -7,15 +7,103 @@
     tools:context=".fragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:text="HOME"
-        android:textSize="34sp"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="321dp"
+        android:text="@string/marcas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/fragmentContainerView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="com.example.parcialtp3.fragments.ListFragment"
+        android:layout_width="342dp"
+        android:layout_height="135dp"
+
+
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        android:divider="@drawable/spacer_medium"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+        >
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/akar_icons_search"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/rectanguloamarillo"
+            android:layout_width="251dp"
+            android:layout_height="100dp"
+            android:background="@drawable/rectanguloclase"
+            android:src="@drawable/carclass"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/rectanguloazul"
+            android:layout_width="251dp"
+            android:layout_height="100dp"
+            android:background="@drawable/rectanguloclase"
+            android:fillColor="#F00040"
+            android:src="@drawable/carclassazul"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/rectanguloceleste"
+            android:layout_width="251dp"
+            android:layout_height="100dp"
+            android:background="@drawable/rectanguloclase"
+            android:fillColor="#F00040"
+            android:src="@drawable/carclassceleste" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
