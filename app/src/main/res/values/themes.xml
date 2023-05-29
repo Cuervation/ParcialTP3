@@ -6,6 +6,10 @@
 
     <!-- Tema standard -->
     <style name="Theme.ParcialTP3" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimary">@color/lightblue</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/grey</item>
     </style>
 </resources>
