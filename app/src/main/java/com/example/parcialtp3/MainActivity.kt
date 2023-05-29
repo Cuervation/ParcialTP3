@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavView = findViewById(R.id.bottom_bar)
 
+        toolbar.setBackgroundColor(resources.getColor(R.color.white))
 
         NavigationUI.setupWithNavController(bottomNavView, navController)
 
@@ -54,14 +55,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDrawerLayout() {
-
-        // Vinculo la navegación del drawer con la del graph
-        navigationView.setupWithNavController(navHostFragment.navController)
-
         appBarConfiguration = AppBarConfiguration.Builder(navHostFragment.navController.graph)
             .setOpenableLayout(drawerLayout)
             .build()
+
+        // Vinculo la navegación del drawer con la del graph
+//        navigationView.setupWithNavController(navHostFragment.navController)
+
+        NavigationUI.setupWithNavController(navigationView, navHostFragment.navController)
         NavigationUI.setupWithNavController(toolbar, navHostFragment.navController, appBarConfiguration)
+
+
+
 
         // Listener para cuando se realiza la navegacion
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -70,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             if (destination.id == R.id.autos || destination.id == R.id.buscar || destination.id == R.id.perfil) {
                 toolbar.setNavigationIcon(R.drawable.atras)
             } else if(destination.id == R.id.home){
-                toolbar.setNavigationIcon(R.drawable.hamburger)
+                toolbar.setNavigationIcon(R.drawable.hamburger_icon)
             }
         }
 

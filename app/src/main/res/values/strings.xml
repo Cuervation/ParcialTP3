@@ -18,6 +18,8 @@
     <string name="txt_notificaciones_settings">Notificaciones</string>
     <string name="title_setting_toolbar">Configuracion</string>
     <string name="marcas">Marcas </string>
+    <string name="txt_hola">Hola</string>
+    <string name="txt_nombre_toolbar">Martín</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
