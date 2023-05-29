@@ -7,7 +7,7 @@ import com.example.parcialtp3.R
 import com.example.parcialtp3.entities.Car
 import com.example.parcialtp3.holders.CarHolder
 
-class CarListAdapter(
+class MakeListAdapter(
     private val carsList: MutableList<Car>
 
 

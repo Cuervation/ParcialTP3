@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.R
-import com.example.parcialtp3.adapters.CarListAdapter
+import com.example.parcialtp3.adapters.MakeListAdapter
 import com.example.parcialtp3.entities.Car
 import com.example.parcialtp3.entities.SpacesItemDecoration
 
@@ -45,7 +45,7 @@ class ListFragment : Fragment() {
       //  var linearLayoutManager = LinearLayoutManager(context)
 
 
-        rec_cars.adapter = CarListAdapter(carsList)
+        rec_cars.adapter = MakeListAdapter(carsList)
         return vista
 
 
