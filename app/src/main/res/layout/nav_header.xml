@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fitsSystemWindows="true"
-    android:background="@android:color/holo_blue_dark">
+    android:layout_height="89dp"
+    android:fitsSystemWindows="true">
+
 
     <TextView
         android:id="@+id/header_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginStart="30dp"
         android:drawablePadding="12dp"
         android:gravity="center_vertical"
-        android:text="@string/app_name"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
-        app:drawableStartCompat="@mipmap/ic_launcher"
+        app:drawableStartCompat="@drawable/avatar_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/header_title"
+        app:layout_constraintTop_toTopOf="parent">
 
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
-        app:layout_constraintEnd_toEndOf="@+id/header_title"
-        app:layout_constraintStart_toStartOf="@+id/header_title"
-        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+        <TextView
+            android:id="@+id/txtHola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_hola"
+            android:textColor="#7E8B97" />
 
+        <TextView
+            android:id="@+id/txtNombreToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/txt_nombre_toolbar"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
