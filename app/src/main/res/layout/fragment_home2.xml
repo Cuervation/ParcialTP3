@@ -131,7 +131,7 @@
             android:backgroundTint="#FFCC00"
             app:cardElevation="6dp">
 
-            <ImageButton
+            <View
                 android:layout_width="162dp"
                 android:layout_height="93dp"
                 android:layout_gravity="center"
@@ -170,7 +170,7 @@
 
             app:cardElevation="6dp">
 
-            <ImageButton
+            <View
                 android:layout_width="162dp"
                 android:layout_height="93dp"
                 android:layout_gravity="center"
@@ -207,7 +207,7 @@
             android:backgroundTint="#04D9FF"
             app:cardElevation="6dp">
 
-            <ImageButton
+            <View
                 android:layout_width="162dp"
                 android:layout_height="93dp"
                 android:layout_gravity="center"
