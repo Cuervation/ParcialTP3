@@ -5,16 +5,18 @@
     android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ListFragment">
+    tools:context=".fragments.CarListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rec_cars"
+        android:id="@+id/autitosunicos"
         android:layout_width="341dp"
-        android:layout_height="130dp"
-        android:orientation="horizontal"
+        android:layout_height="445dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844" />
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

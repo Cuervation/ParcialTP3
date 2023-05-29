@@ -7,16 +7,18 @@ class Car(
     year: String?,
     combustible: String?,
     clase: String?,
-    image: Int?
+    image: Int?,
+    cantAsientos: String?
 ) {
 
     var image: Int
-    var marca: String = ""
-    var modelo: String =""
-    var tipoDeCambio: String = ""
-    var year: String = ""
-    var combustible: String = ""
-    var clase: String = ""
+    var marca: String
+    var modelo: String
+    var tipoDeCambio: String
+    var year: String
+    var combustible: String
+    var clase: String
+    var cantAsientos: String
 
     init {
         this.marca = marca!!
@@ -26,6 +28,7 @@ class Car(
         this.combustible = combustible!!
         this.clase = clase!!
         this.image = image!!
+        this.cantAsientos = cantAsientos!!
     }
 
   /*  constructor(marca: String?, modelo: String?, tipoDeCambio: String?, year: String?, combustible: String?, clase: String?){
