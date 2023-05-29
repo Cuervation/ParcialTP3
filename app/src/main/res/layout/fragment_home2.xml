@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment"
+   
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <View
+        android:id="@+id/rectangulogris"
+        android:layout_width="0dp"
+        android:layout_height="730dp"
+
+
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="67dp"
+        android:background="@drawable/rectangulogrisbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fira_sans_black"
+        android:text="@string/marcas"
+        android:textColor="#0D0D0D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/fragmentContainerView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="com.example.parcialtp3.fragments.ListFragment"
+        android:layout_width="350dp"
+        android:layout_height="135dp"
+
+
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="425dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        android:divider="@drawable/spacer_medium"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="340dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/edittext_rounded_background"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+
+
+                android:src="@drawable/akar_icons_search"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ExtraText" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="35dp"
+
+                android:gravity="center_vertical"
+                android:hint="@string/buscador"
+                android:inputType="text"
+                android:textColorHint="#A8A8A8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rectanguloamarillo"
+            style="@style/CustomCardViewStyle"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:backgroundTint="#FFCC00"
+            app:cardElevation="6dp">
+
+            <ImageButton
+                android:layout_width="162dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bmw1" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="285dp"
+                android:layout_marginTop="82dp"
+                android:fontFamily="@font/fira_sans_black"
+                android:text="Filtro >|"
+                android:textColor="@color/white"
+                android:textSize="8sp"></TextView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/fira_sans_black"
+                android:text="Deportivos"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </TextView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rectanguloazul"
+            style="@style/CustomCardViewStyle"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:backgroundTint="#3330E5"
+
+            app:cardElevation="6dp">
+
+            <ImageButton
+                android:layout_width="162dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bmw2" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="285dp"
+                android:layout_marginTop="82dp"
+                android:fontFamily="@font/fira_sans_black"
+                android:text="Filtro >|"
+                android:textColor="@color/white"
+                android:textSize="8sp"></TextView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/fira_sans_black"
+                android:text="SUV"
+                android:textColor="@color/white"
+                android:textSize="15sp"></TextView>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rectanguloceleste"
+            style="@style/CustomCardViewStyle"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:backgroundTint="#04D9FF"
+            app:cardElevation="6dp">
+
+            <ImageButton
+                android:layout_width="162dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bmw3" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="285dp"
+                android:layout_marginTop="82dp"
+                android:fontFamily="@font/fira_sans_black"
+                android:text="Filtro >|"
+                android:textColor="@color/white"
+                android:textSize="8sp"></TextView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/fira_sans_black"
+                android:text="ELÉCTRICOS"
+                android:textColor="@color/white"
+                android:textSize="15sp"></TextView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
