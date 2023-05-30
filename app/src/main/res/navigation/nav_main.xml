@@ -5,7 +5,7 @@
     android:id="@+id/nav_main"
     app:startDestination="@id/home">
     <fragment
-        android:id="@+id/buscar"
+        android:id="@+id/buscar2"
         android:name="com.example.parcialtp3.fragments.BuscarFragment"
         android:label="fragment_buscar"
         tools:layout="@layout/fragment_buscar" />
