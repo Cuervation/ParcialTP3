@@ -1,5 +1,7 @@
 package com.example.parcialtp3.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,20 +35,29 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_login, container, false)
 
+        text_password = vista.findViewById(R.id.txtPassword)
+        text_usuario = vista.findViewById(R.id.txtUsuario)
+
         vista.findViewById<Button>(R.id.btnIngresar).setOnClickListener {
             val action = LoginFragmentDirections.actionLoginFragmentToMainActivity()
             this.findNavController().navigate(action)
+            val sharedPreference =  context?.getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
+            var editor = sharedPreference?.edit()
+            editor?.putString("username",text_usuario.text.toString())
+            editor?.apply()
             activity?.finish()
         }
 
-        text_password = vista.findViewById(R.id.txtPassword)
-        text_usuario = vista.findViewById(R.id.txtUsuario)
+
+
+
 
         titulo_login = vista.findViewById<TextView>(R.id.tituloLogin)
         tituloSpannableString(titulo_login)
         return vista
 
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

@@ -8,10 +8,10 @@ class LoginViewModel : ViewModel() {
     private var password: MutableLiveData<String>? = null
 
     fun changeUsuario(nuevoUsuario: String){
-        usuario?.postValue(nuevoUsuario)
+        getUsuario()?.postValue(nuevoUsuario)
     }
     fun changePassword(nuevaPassword: String) {
-        password?.postValue(nuevaPassword)
+        getPassword()?.postValue(nuevaPassword)
     }
 
     fun getUsuario(): MutableLiveData<String>? {
