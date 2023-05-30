@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
+    implementation 'com.google.ar.sceneform:filament-android:1.17.1'
     def nav_version = "2.5.3"
 
     // Kotlin
