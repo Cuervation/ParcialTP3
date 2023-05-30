@@ -75,15 +75,9 @@
                 />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/rectanguloamarillo"
-            android:layout_width="251dp"
-            android:layout_height="100dp"
-            android:background="@drawable/rectanguloclase"
-            android:src="@drawable/carclass"
 
 
-            />
+
 
         <ImageView
             android:id="@+id/rectanguloazul"

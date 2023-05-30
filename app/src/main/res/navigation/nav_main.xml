@@ -10,22 +10,27 @@
         android:label="fragment_buscar"
         tools:layout="@layout/fragment_buscar" />
     <fragment
+        android:id="@+id/autos"
+        android:name="com.example.parcialtp3.fragments.AutosFragment"
+        android:label="fragment_autos"
+        tools:layout="@layout/fragment_autos" >
+        <action
+            android:id="@+id/action_autos_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
         android:id="@+id/perfil"
         android:name="com.example.parcialtp3.fragments.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" >
-        <action
-            android:id="@+id/action_perfil_to_home"
-            app:destination="@id/home" />
-    </fragment>
+        tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/home"
         android:name="com.example.parcialtp3.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_home_to_carListFragment"
-            app:destination="@id/carListFragment" />
+            android:id="@+id/action_home_to_autos2"
+            app:destination="@id/autos" />
     </fragment>
     <fragment
         android:id="@+id/settings"
@@ -40,10 +45,5 @@
         <action
             android:id="@+id/action_settings_to_perfil"
             app:destination="@id/perfil" />
-    <fragment
-        android:id="@+id/carListFragment"
-        android:name="com.example.parcialtp3.fragments.CarListFragment"
-        android:label="fragment_car_list"
-        tools:layout="@layout/fragment_car_list" />
     />
 </navigation>

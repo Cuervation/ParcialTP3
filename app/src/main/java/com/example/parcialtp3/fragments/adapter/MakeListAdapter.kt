@@ -25,8 +25,9 @@ class MakeListAdapter(
 
     override fun onBindViewHolder(holder: CarHolder, position: Int) {
         val car = carsList[position]
-
         holder.setMarca(car.marca)
+        holder.setLogo(car.image)
+       // holder.setLogo(car.image)
 
       //  holder.setModelo(car.modelo)
       // holder.setOrden[position]
