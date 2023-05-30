@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.R
-import com.example.parcialtp3.adapters.CarListAdapter
+import com.example.parcialtp3.adapters.MakeListAdapter
 import com.example.parcialtp3.entities.Car
 import com.example.parcialtp3.entities.SpacesItemDecoration
 
@@ -31,7 +31,7 @@ class ListFragment : Fragment() {
     ): View? {
 
         vista = inflater.inflate(R.layout.fragment_list, container, false)
-      //  var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
+        //var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
         //var carImage = R.drawable.carmaserati
 
         carsList.add(Car( make = "BMW", ))
@@ -49,7 +49,7 @@ class ListFragment : Fragment() {
       //  var linearLayoutManager = LinearLayoutManager(context)
 
 
-        rec_cars.adapter = CarListAdapter(carsList)
+        rec_cars.adapter = MakeListAdapter(carsList)
         return vista
     }
 }
