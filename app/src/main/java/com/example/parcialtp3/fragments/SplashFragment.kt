@@ -21,7 +21,7 @@ import java.util.TimerTask
 class SplashFragment : Fragment() {
     lateinit var timer: Timer
     var progress: Int = 0
-    val totalTime: Long = 5000
+    val totalTime: Long = 500
     val interval: Long = 100
     lateinit var vista:View
     lateinit var progressBar: ProgressBar
@@ -51,14 +51,14 @@ class SplashFragment : Fragment() {
 
     private fun simulateProgress() {
         val animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 100)
-        animation.duration = 5000 // Duración de 5 segundos en milisegundos
+        animation.duration = 500 // Duración de 5 segundos en milisegundos
         animation.interpolator = LinearInterpolator()
         animation.start()
 
         Handler().postDelayed({
             // Aquí puedes realizar la transición al LoginFragment
             navigateToLoginFragment()
-        }, animation.duration ) // Retraso de 5 segundos en milisegundos
+        }, 500) // Retraso de 5 segundos en milisegundos
     }
 
 
