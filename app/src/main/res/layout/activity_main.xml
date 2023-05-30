@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
 
         <View
-            android:id="@+id/rectangle_3"
+            android:id="@+id/rectangulogris"
             android:layout_width="390dp"
             android:layout_height="734dp"
             android:layout_alignParentStart="true"
