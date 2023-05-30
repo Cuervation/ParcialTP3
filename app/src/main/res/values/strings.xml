@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ParcialTP3</string>
+    <string name="app_name">PremierRentCar</string>
     <string name="titulo_login">PremierRentCar</string>
     <string name="titulo_login_left">Premier</string>
     <string name="titulo_login_rigth">RentCar</string>
