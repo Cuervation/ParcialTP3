@@ -4,17 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.R
-import com.example.parcialtp3.entities.Car
+import com.example.parcialtp3.entities.Marca
 import com.example.parcialtp3.holders.CarHolder
 
 class MakeListAdapter(
-    private val carsList: MutableList<Car>
+    private val marcasList: MutableList<Marca>
 
 
 ) : RecyclerView.Adapter<CarHolder>() {
 
 
-    override fun getItemCount() = carsList.size
+    override fun getItemCount() = marcasList.size
 
 
 
@@ -24,9 +24,9 @@ class MakeListAdapter(
     }
 
     override fun onBindViewHolder(holder: CarHolder, position: Int) {
-        val car = carsList[position]
-        holder.setMarca(car.make!!)
-        holder.setLogo(R.drawable.ferrari)
+        val marca = marcasList[position]
+        holder.setMarca(marca.marca)
+        holder.setLogo(marca.logo)
        // holder.setLogo(car.image)
 
       //  holder.setModelo(car.modelo)
