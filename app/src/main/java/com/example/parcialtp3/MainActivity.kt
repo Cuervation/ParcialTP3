@@ -1,15 +1,16 @@
 package com.example.parcialtp3
 
 import android.content.Context
-import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
@@ -17,65 +18,68 @@ import com.example.parcialtp3.model.viewmodel.LoginViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
-
-
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var bottomNavView : BottomNavigationView
-    private lateinit var navHostFragment : NavHostFragment
-    private lateinit var appBarConfiguration : AppBarConfiguration
-
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
+    lateinit var appBarConfiguration: AppBarConfiguration
+    lateinit var navController: NavController
+    lateinit var toolbar: Toolbar
+    lateinit var drawer_layout: DrawerLayout
+    lateinit var navigation_view: NavigationView
     private lateinit var nombreToolbar: TextView
-
-    private lateinit var toolbar: Toolbar
     private lateinit var viewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_test_zeta)
 
-        val tituloToolbar = findViewById<TextView>(R.id.titleToolbar)
+        //Drawer Layout
+        drawer_layout = findViewById(R.id.drawer_layout)
 
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        //NavView
+        navigation_view = findViewById(R.id.navigation_view)
 
-        val navController = navHostFragment.navController
+        //Bottom Bar
+        val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        navController = findNavController(R.id.host_fragment)
+        bottom_navigation.setupWithNavController(navController)
+
+        //Toolbar
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        //Nav Up
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawer_layout)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawer_layout)
 
-        bottomNavView = findViewById(R.id.bottom_bar)
+        //Drawer Navigation
+        NavigationUI.setupWithNavController(navigation_view, navController)
 
-        toolbar.setBackgroundColor(resources.getColor(R.color.white))
+        nombreToolbar = navigation_view.getHeaderView(0).findViewById(R.id.txtNombreToolbar)
 
-        NavigationUI.setupWithNavController(bottomNavView, navController)
-
-
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navigationView = findViewById(R.id.nav_view)
-        nombreToolbar = navigationView.getHeaderView(0).findViewById(R.id.txtNombreToolbar)
-
-
-        toolbar.setupWithNavController(navHostFragment.navController)
+        toolbar.setupWithNavController(navController)
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
         var user = sharedPreference.getString("username","No Registrado").toString()
         nombreToolbar.text =user
         viewModel.changeUsuario(user)
         setupDrawerLayout()
+        val tituloToolbar = findViewById<TextView>(R.id.titleToolbar)
         tituloSpannableString(tituloToolbar)
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 
     private fun setupDrawerLayout() {
-        appBarConfiguration = AppBarConfiguration.Builder(navHostFragment.navController.graph)
-            .setOpenableLayout(drawerLayout)
+        appBarConfiguration = AppBarConfiguration.Builder(navController.graph)
+            .setOpenableLayout(drawer_layout)
             .build()
 
-        NavigationUI.setupWithNavController(navigationView, navHostFragment.navController)
-        NavigationUI.setupWithNavController(toolbar, navHostFragment.navController, appBarConfiguration)
+        NavigationUI.setupWithNavController(navigation_view, navController)
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
 
-        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.autos || destination.id == R.id.buscar || destination.id == R.id.perfil) {
                 toolbar.setNavigationIcon(R.drawable.atras)
             } else if(destination.id == R.id.home){
@@ -84,16 +88,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
-    override fun onSupportNavigateUp(): Boolean {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
-
-        return false
-    }
-
 }
