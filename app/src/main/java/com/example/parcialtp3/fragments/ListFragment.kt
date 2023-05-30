@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.R
 import com.example.parcialtp3.adapters.MakeListAdapter
-import com.example.parcialtp3.entities.Car
+import com.example.parcialtp3.entities.Marca
 import com.example.parcialtp3.entities.SpacesItemDecoration
 
 
 class ListFragment : Fragment() {
 
     lateinit var vista: View
-    var carsList : MutableList<Car> = ArrayList<Car>()
+    var listaMarcas : MutableList<Marca> = ArrayList<Marca>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +34,11 @@ class ListFragment : Fragment() {
         //var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
         //var carImage = R.drawable.carmaserati
 
-        carsList.add(Car( make = "BMW", ))
-        carsList.add(Car( make = "MERCEDES", ))
-        carsList.add(Car( make = "BMW", ))
-        carsList.add(Car( make = "BMW", ))
+        listaMarcas.add(Marca( "Maserati", R.drawable.carmaserati))
+        listaMarcas.add(Marca("Mercedes", R.drawable.carmercedes))
+        listaMarcas.add(Marca("TOGG", R.drawable.cartogg))
+        listaMarcas.add(Marca("Porsche", R.drawable.caralgo))
+        listaMarcas.add(Marca("Ferrari", R.drawable.ferrari))
 
         val rec_cars = vista.findViewById<RecyclerView>(R.id.rec_cars)
         rec_cars.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
@@ -49,7 +50,7 @@ class ListFragment : Fragment() {
       //  var linearLayoutManager = LinearLayoutManager(context)
 
 
-        rec_cars.adapter = MakeListAdapter(carsList)
+        rec_cars.adapter = MakeListAdapter(listaMarcas)
         return vista
     }
 }
