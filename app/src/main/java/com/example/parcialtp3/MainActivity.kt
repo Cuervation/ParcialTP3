@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_test_zeta)
+        setContentView(R.layout.activity_main)
 
         //Drawer Layout
         drawer_layout = findViewById(R.id.drawer_layout)
