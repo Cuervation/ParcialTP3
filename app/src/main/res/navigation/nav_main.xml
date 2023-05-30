@@ -13,11 +13,7 @@
         android:id="@+id/autos"
         android:name="com.example.parcialtp3.fragments.AutosFragment"
         android:label="fragment_autos"
-        tools:layout="@layout/fragment_autos" >
-        <action
-            android:id="@+id/action_autos_to_home"
-            app:destination="@id/home" />
-    </fragment>
+        tools:layout="@layout/fragment_autos" />
     <fragment
         android:id="@+id/perfil"
         android:name="com.example.parcialtp3.fragments.PerfilFragment"
