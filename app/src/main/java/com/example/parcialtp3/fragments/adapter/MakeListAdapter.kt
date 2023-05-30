@@ -25,8 +25,8 @@ class MakeListAdapter(
 
     override fun onBindViewHolder(holder: CarHolder, position: Int) {
         val car = carsList[position]
-        holder.setMarca(car.marca)
-        holder.setLogo(car.image)
+        holder.setMarca(car.make!!)
+        holder.setLogo(R.drawable.ferrari)
        // holder.setLogo(car.image)
 
       //  holder.setModelo(car.modelo)

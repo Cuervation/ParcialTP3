@@ -14,6 +14,6 @@ interface CarsService {
     )
     @GET("/v1/cars")
     fun getCars(@Query("make") make: String,
-                @Query("limit") limit: Int = 5,
+                @Query("limit") limit: Int = 50,
     ): Call<MutableList<Car>?>
 }
