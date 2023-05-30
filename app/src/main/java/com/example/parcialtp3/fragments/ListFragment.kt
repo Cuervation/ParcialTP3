@@ -32,7 +32,7 @@ class ListFragment : Fragment() {
     ): View? {
 
         vista = inflater.inflate(R.layout.fragment_list, container, false)
-      //  var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
+        //var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
         //var carImage = R.drawable.carmaserati
 
         carsList.add(Car("Maserati","Alguno","Automatico","2000","Electrico","SUV",R.drawable.carmaserati))
