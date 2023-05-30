@@ -1,7 +1,5 @@
 package com.example.parcialtp3.holders
 
-import android.graphics.drawable.Drawable
-import android.media.Image
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView

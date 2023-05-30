@@ -7,60 +7,64 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.R
+import com.example.parcialtp3.adapters.CarListAdapterAutito
+import com.example.parcialtp3.entities.Car
+import com.example.parcialtp3.entities.SpacesItemDecorationAutito
 import com.example.parcialtp3.model.CarsResponse
 import com.example.parcialtp3.services.CarsServiceApiBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
+
 
 class CarListFragment : Fragment() {
 
-//    private lateinit var carsList : CarsResponse
-        private lateinit var carText: TextView
+    lateinit var vista: View
+    var autosList : MutableList<Car> = ArrayList<Car>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_car_list, container, false)
-        carText = view.findViewById(R.id.car_text)
 
-        try{
-            GetCars()
-            Log.println(1, "", carText.text.toString())
-        }catch(e: Exception) {
-            Log.e(ContentValues.TAG, "The exception caught while executing the process. (error1)")
-            e.printStackTrace();
-        }
+        vista = inflater.inflate(R.layout.fragment_list_autos, container, false)
 
-        return view
+        GetCars()
+
+//        val autitounico = vista.findViewById<RecyclerView>(R.id.autitosunicos)
+//        autitounico.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+//
+//        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing_between_items_autos)
+//        autitounico.addItemDecoration(SpacesItemDecorationAutito(spacingInPixels))
+//
+//        Log.i("autos", autosList.toString())
+//        autitounico.adapter = CarListAdapterAutito(autosList)
+        return vista
     }
 
     fun GetCars(){
         val service = CarsServiceApiBuilder.create()
-
+        Log.i("service", service.toString())
         try{
-            service.getCars("toyota").enqueue(object : Callback<CarsResponse> {
-                override fun onResponse(call: Call<CarsResponse?>, response: Response<CarsResponse?>) {
+            service.getCars("bmw").enqueue(object : Callback<MutableList<Car>?> {
+                override fun onResponse(call: Call<MutableList<Car>?>, response: Response<MutableList<Car>?>) {
                     if (response.isSuccessful) {
-                        val cars = response.body()
-                        if (cars != null) {
-                            carText.text = cars.cars[0].make
+                        val response = response.body()
+                        if (response != null) {
+                            setCarList(response)
                         }
                     }
                 }
 
-                override fun onFailure(call: Call<CarsResponse>, t: Throwable) {
+                override fun onFailure(call: Call<MutableList<Car>?>, t: Throwable) {
                     Log.e("Example", t.stackTraceToString())
                 }
             })
@@ -68,5 +72,19 @@ class CarListFragment : Fragment() {
             Log.e(ContentValues.TAG, "The exception caught while executing the process. (error1)")
             e.printStackTrace();
         }
+
+    }
+
+    private fun setCarList(carResponse: MutableList<Car>){
+        autosList = carResponse
+
+        val autitounico = vista.findViewById<RecyclerView>(R.id.autitosunicos)
+        autitounico.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+
+        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing_between_items_autos)
+        autitounico.addItemDecoration(SpacesItemDecorationAutito(spacingInPixels))
+
+        Log.i("autos", autosList.toString())
+        autitounico.adapter = CarListAdapterAutito(autosList)
     }
 }

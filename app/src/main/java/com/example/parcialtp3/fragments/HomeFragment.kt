@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 import com.example.parcialtp3.R
+import com.google.android.material.card.MaterialCardView
 
 class HomeFragment : Fragment() {
+
+    lateinit var vista: View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,6 +23,26 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home2, container, false)
+
+        vista = inflater.inflate(R.layout.fragment_home2, container, false)
+        vista.findViewById<MaterialCardView>(R.id.rectanguloamarillo).setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeToAutos2()
+            this.findNavController().navigate(action)
+
+        }
+
+        vista.findViewById<MaterialCardView>(R.id.rectanguloazul).setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeToAutos2()
+            this.findNavController().navigate(action)
+
+        }
+        vista.findViewById<MaterialCardView>(R.id.rectanguloceleste).setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeToAutos2()
+            this.findNavController().navigate(action)
+
+        }
+        return vista
     }
+
+
 }
