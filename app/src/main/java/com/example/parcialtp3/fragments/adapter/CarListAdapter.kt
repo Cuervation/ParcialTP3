@@ -12,11 +12,7 @@ class CarListAdapter(
 
 
 ) : RecyclerView.Adapter<CarHolder>() {
-
-
     override fun getItemCount() = carsList.size
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarHolder {
          val view =  LayoutInflater.from(parent.context).inflate(R.layout.fragment_item_view, parent, false)
@@ -25,8 +21,8 @@ class CarListAdapter(
 
     override fun onBindViewHolder(holder: CarHolder, position: Int) {
         val car = carsList[position]
-        holder.setMarca(car.marca)
-        holder.setLogo(car.image)
+        holder.setMarca(car.make!!)
+        holder.setLogo(R.drawable.carmercedes)
        // holder.setLogo(car.image)
 
       //  holder.setModelo(car.modelo)

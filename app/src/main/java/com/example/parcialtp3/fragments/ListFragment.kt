@@ -25,7 +25,6 @@ class ListFragment : Fragment() {
 
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,20 +34,10 @@ class ListFragment : Fragment() {
       //  var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
         //var carImage = R.drawable.carmaserati
 
-        carsList.add(Car("Maserati","Alguno","Automatico","2000","Electrico","SUV",R.drawable.carmaserati,"Two seater"))
-        carsList.add(Car("Mercedes","Algo","Automatico","2000","Electrico","SUV",R.drawable.carmercedes,"Two seater"))
-        carsList.add(Car("TOGG","Ninguno","Automatico","2000","Electrico","SUV",R.drawable.cartogg,"Two seater"))
-        carsList.add(Car("Ferrari","Cualquiera","Automatico","2000","Electrico","SUV",R.drawable.ferrari,"Two seater"))
-        carsList.add(Car("Random","Cualquiera","Automatico","2000","Electrico","SUV",R.drawable.caralgo,"Two seater"))
-
-        /*carsList.add(Car("Mercedes","Algo","Automatico","2000","Electrico","SUV"))
-        carsList.add(Car("TOGG","Ninguno","Automatico","2000","Electrico","SUV"))
-        carsList.add(Car("Random","Cualquiera","Automatico","2000","Electrico","SUV")) */
-
-       /* for(i in 1 .. 10){
-            carsList.add(Car("Toyota","Caca","Automatico","2000","Electrico","SUV"))
-
-        } */
+        carsList.add(Car( make = "BMW", ))
+        carsList.add(Car( make = "MERCEDES", ))
+        carsList.add(Car( make = "BMW", ))
+        carsList.add(Car( make = "BMW", ))
 
         val rec_cars = vista.findViewById<RecyclerView>(R.id.rec_cars)
         rec_cars.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
@@ -62,7 +51,5 @@ class ListFragment : Fragment() {
 
         rec_cars.adapter = CarListAdapter(carsList)
         return vista
-
-
-}
+    }
 }

@@ -1,6 +1,8 @@
 package com.example.parcialtp3.fragments
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.R
 import com.example.parcialtp3.adapters.CarListAdapterAutito
 import com.example.parcialtp3.entities.Car
-import com.example.parcialtp3.entities.SpacesItemDecoration
 import com.example.parcialtp3.entities.SpacesItemDecorationAutito
+import com.example.parcialtp3.model.CarsResponse
+import com.example.parcialtp3.services.CarsServiceApiBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class CarListFragment : Fragment() {
@@ -24,44 +30,61 @@ class CarListFragment : Fragment() {
 
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         vista = inflater.inflate(R.layout.fragment_list_autos, container, false)
-      //  var carImage: Drawable? = ContextCompat.getDrawable(requireContext(), R.mipmap.carmaserati)
-        //var carImage = R.drawable.carmaserati
 
-        autosList.add(Car("Maserati","Alguno","Automatico","2000","Electrico","SUV",R.drawable.carmaserati,"Two seater"))
-        autosList.add(Car("Mercedes","Algo","Automatico","2000","Electrico","SUV",R.drawable.carmercedes,"Two seater"))
-        autosList.add(Car("TOGG","Ninguno","Automatico","2000","Electrico","SUV",R.drawable.cartogg,"Two seater"))
-        autosList.add(Car("Ferrari","Cualquiera","Automatico","2000","Electrico","SUV",R.drawable.ferrari,"Two seater"))
-        autosList.add(Car("Random","Cualquiera","Automatico","2000","Electrico","SUV",R.drawable.caralgo,"Two seater"))
+        GetCars()
 
-        /*carsList.add(Car("Mercedes","Algo","Automatico","2000","Electrico","SUV"))
-        carsList.add(Car("TOGG","Ninguno","Automatico","2000","Electrico","SUV"))
-        carsList.add(Car("Random","Cualquiera","Automatico","2000","Electrico","SUV")) */
+//        val autitounico = vista.findViewById<RecyclerView>(R.id.autitosunicos)
+//        autitounico.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+//
+//        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing_between_items_autos)
+//        autitounico.addItemDecoration(SpacesItemDecorationAutito(spacingInPixels))
+//
+//        Log.i("autos", autosList.toString())
+//        autitounico.adapter = CarListAdapterAutito(autosList)
+        return vista
+    }
 
-       /* for(i in 1 .. 10){
-            carsList.add(Car("Toyota","Caca","Automatico","2000","Electrico","SUV"))
+    fun GetCars(){
+        val service = CarsServiceApiBuilder.create()
+        Log.i("service", service.toString())
+        try{
+            service.getCars("bmw").enqueue(object : Callback<MutableList<Car>?> {
+                override fun onResponse(call: Call<MutableList<Car>?>, response: Response<MutableList<Car>?>) {
+                    if (response.isSuccessful) {
+                        val response = response.body()
+                        if (response != null) {
+                            setCarList(response)
+                        }
+                    }
+                }
 
-        } */
+                override fun onFailure(call: Call<MutableList<Car>?>, t: Throwable) {
+                    Log.e("Example", t.stackTraceToString())
+                }
+            })
+        }catch(e: Exception) {
+            Log.e(ContentValues.TAG, "The exception caught while executing the process. (error1)")
+            e.printStackTrace();
+        }
+
+    }
+
+    private fun setCarList(carResponse: MutableList<Car>){
+        autosList = carResponse
 
         val autitounico = vista.findViewById<RecyclerView>(R.id.autitosunicos)
         autitounico.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        // Add item decoration to create space between items
 
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing_between_items_autos)
         autitounico.addItemDecoration(SpacesItemDecorationAutito(spacingInPixels))
-       // rec_cars.setHasFixedSize(true)
-      //  var linearLayoutManager = LinearLayoutManager(context)
 
-
-       autitounico.adapter = CarListAdapterAutito(autosList)
-        return vista
-
-
-}
+        Log.i("autos", autosList.toString())
+        autitounico.adapter = CarListAdapterAutito(autosList)
+    }
 }

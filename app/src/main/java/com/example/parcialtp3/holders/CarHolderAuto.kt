@@ -34,27 +34,23 @@ class CarHolderAuto(v: View) : RecyclerView.ViewHolder(v) {
     }
 
     fun setTipoCambio(tipoCambio: String) {
-
         val eleccion = view.findViewById<TextView>(R.id.txtItemViewTipoCambio)
         eleccion.text = tipoCambio
     }
 
     fun setTipoCombustible(tipoCombustible: String) {
-
         val eleccion = view.findViewById<TextView>(R.id.txtItemViewTipoCombustible)
         eleccion.text = tipoCombustible
     }
 
     fun setYear(year: String) {
-
         val eleccion = view.findViewById<TextView>(R.id.txtItemViewYear)
         eleccion.text = year
     }
 
-    fun setCantAsientos(cantAsientos: String) {
-
-        val eleccion = view.findViewById<TextView>(R.id.txtItemViewCantAsientos)
-        eleccion.text = cantAsientos
+    fun setCylinder(cylinders: String) {
+        val eleccion = view.findViewById<TextView>(R.id.txtItemViewCylinders)
+        eleccion.text = cylinders
     }
 }
 

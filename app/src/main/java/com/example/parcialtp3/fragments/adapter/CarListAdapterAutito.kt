@@ -26,12 +26,12 @@ class CarListAdapterAutito(
 
     override fun onBindViewHolder(holder: CarHolderAuto, position: Int) {
         val car = autosList[position]
-        holder.setModelo(car.modelo)
-        holder.setLogo(car.image)
-        holder.setTipoCambio(car.tipoDeCambio)
-        holder.setTipoCombustible(car.combustible)
-        holder.setYear(car.year)
-        holder.setCantAsientos(car.cantAsientos)
+        holder.setModelo(car.model!!)
+        holder.setLogo(R.drawable.bmw1)
+        holder.setTipoCambio(car.drive!!)
+        holder.setTipoCombustible(car.fuel_type!!)
+        holder.setYear(car.year.toString())
+        holder.setCylinder(car.cylinders.toString())
        // holder.setLogo(car.image)
 
       //  holder.setModelo(car.modelo)
