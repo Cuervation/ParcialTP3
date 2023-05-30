@@ -57,6 +57,8 @@ class MainActivity : AppCompatActivity() {
         nombreToolbar = navigationView.getHeaderView(0).findViewById(R.id.txtNombreToolbar)
 
 
+
+
         toolbar.setupWithNavController(navHostFragment.navController)
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
@@ -68,11 +70,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDrawerLayout() {
-        appBarConfiguration = AppBarConfiguration.Builder(navHostFragment.navController.graph)
-            .setOpenableLayout(drawerLayout)
-            .build()
 
+        appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph, drawerLayout)
+        NavigationUI.setupActionBarWithNavController(this, navHostFragment.navController, drawerLayout)
         NavigationUI.setupWithNavController(navigationView, navHostFragment.navController)
+
+        //appBarConfiguration = AppBarConfiguration(navController.graph, drawer_layout)
+        //NavigationUI.setupActionBarWithNavController(this, navController, drawer_layout)
+        //NavigationUI.setupWithNavController(navigation_view, navController)
+
+
+        //appBarConfiguration = AppBarConfiguration.Builder(navHostFragment.navController.graph)
+        //    .setOpenableLayout(drawerLayout)
+        //    .build()
+
+        //NavigationUI.setupWithNavController(navigationView, navHostFragment.navController)
         NavigationUI.setupWithNavController(toolbar, navHostFragment.navController, appBarConfiguration)
 
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -80,20 +92,22 @@ class MainActivity : AppCompatActivity() {
                 toolbar.setNavigationIcon(R.drawable.atras)
             } else if(destination.id == R.id.home){
                 toolbar.setNavigationIcon(R.drawable.hamburger_icon)
-            }
+           }
         }
 
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
-
-        return false
+        return NavigationUI.navigateUp(navHostFragment.navController, appBarConfiguration)
     }
+//    override fun onSupportNavigateUp(): Boolean {
+//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+//            drawerLayout.closeDrawer(GravityCompat.START)
+//        } else {
+//            drawerLayout.openDrawer(GravityCompat.START)
+//        }
+//
+//        return false
+//    }
 
 }

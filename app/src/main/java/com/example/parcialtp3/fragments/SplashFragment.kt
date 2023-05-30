@@ -58,7 +58,7 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
             // Aquí puedes realizar la transición al LoginFragment
             navigateToLoginFragment()
-        }, 5000) // Retraso de 5 segundos en milisegundos
+        }, animation.duration ) // Retraso de 5 segundos en milisegundos
     }
 
 
